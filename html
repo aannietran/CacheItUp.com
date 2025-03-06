@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocache Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .clue {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Geocache Proposal!</h1>
+        <p>Follow the clues to find the final destination.</p>
+        <hr>
+        
+        <div id="stop1">
+            <h2>Stop 1: Zaharakos 🍦</h2>
+            <p class="clue">"Enjoy something sweet and take in the past, where soda fountains sing, and memories last."</p>
+            <input type="text" id="code1" placeholder="Enter passcode">
+            <button onclick="checkCode(1, 'friendship')">Next Clue</button>
+        </div>
+
+        <div id="stop2" class="hidden">
+            <h2>Stop 2: Friendship Alley 🌈</h2>
+            <p class="clue">"Step off the main road, where colors shine bright. A path of friendship, a tunnel of light."</p>
+            <input type="text" id="code2" placeholder="Enter passcode">
+            <button onclick="checkCode(2, 'lights')">Next Clue</button>
+        </div>
+
+        <div id="stop3" class="hidden">
+            <h2>Stop 3: Washington Street Trees ✨</h2>
+            <p class="clue">"Under the twinkling lights where the city hums, a question awaits—your journey’s begun."</p>
+            <button onclick="showFinal()">Reveal the Final Message</button>
+        </div>
+
+        <div id="finalMessage" class="hidden">
+            <h2>🎉 You Found the Final Treasure! 🎉</h2>
+            <p>But the real prize is right in front of you... 💍</p>
+        </div>
+    </div>
+
+    <script>
+        function checkCode(stop, correctCode) {
+            let input = document.getElementById(code${stop}).value.toLowerCase();
+            if (input === correctCode) {
+                document.getElementById(stop${stop}).style.display = 'none';
+                document.getElementById(stop${stop+1}).style.display = 'block';
+            } else {
+                alert("Incorrect code! Try again.");
+            }
+        }
+
+        function showFinal() {
+            document.getElementById("stop3").style.display = 'none';
+            document.getElementById("finalMessage").style.display = 'block';
+        }
+    </script>
+</body>
+</html>
