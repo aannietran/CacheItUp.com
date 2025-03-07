@@ -70,14 +70,15 @@
 
     <script>
         function checkCode(stop, correctCode) {
-            let input = document.getElementById(`code${stop}`).value.toLowerCase();
-            if (input === correctCode) {
-                document.getElementById(`stop${stop}`).style.display = 'none';
-                document.getElementById(`stop${stop+1}`).style.display = 'block';
-            } else {
-                alert("Incorrect code! Try again.");
-            }
-        }
+    let input = document.getElementById(`code${stop}`).value.toLowerCase();
+    if (input === correctCode) {
+        document.getElementById(`stop${stop}`).style.display = 'none';
+        document.getElementById(`stop${stop+1}`).style.display = 'block';
+    } else {
+        alert("Incorrect code! Try again.");
+    }
+}
+
 
         function showFinal() {
             document.getElementById("stop3").style.display = 'none';
