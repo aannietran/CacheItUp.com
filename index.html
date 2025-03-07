@@ -46,19 +46,19 @@
             <h2>Stop 1: Zaharakos 🍦</h2>
             <p class="clue">"Enjoy something sweet and take in the past, where soda fountains sing, and memories last."</p>
             <input type="text" id="code1" placeholder="Enter passcode">
-            <button onclick="checkCode(1, 'friendship')">Next Clue</button>
+            <button onclick="checkCode(1, 'icecream')">Next Clue</button>
         </div>
 
         <div id="stop2" class="hidden">
-            <h2>Stop 2: Friendship Alley 🌈</h2>
-            <p class="clue">"Step off the main road, where colors shine bright. A path of friendship, a tunnel of light."</p>
+            <h2>Stop 2: Washington Street Trees ✨</h2>
+            <p class="clue">"Under the twinkling lights where the city hums, a question awaits—but not just yet!"</p>
             <input type="text" id="code2" placeholder="Enter passcode">
-            <button onclick="checkCode(2, 'lights')">Next Clue</button>
+            <button onclick="checkCode(2, 'twinkle')">Next Clue</button>
         </div>
 
         <div id="stop3" class="hidden">
-            <h2>Stop 3: Washington Street Trees ✨</h2>
-            <p class="clue">"Under the twinkling lights where the city hums, a question awaits—your journey’s begun."</p>
+            <h2>Final Stop: Friendship Alley 🌈</h2>
+            <p class="clue">"Step off the main road, where colors shine bright. A path of friendship, a tunnel of light."</p>
             <button onclick="showFinal()">Reveal the Final Message</button>
         </div>
 
@@ -70,10 +70,10 @@
 
     <script>
         function checkCode(stop, correctCode) {
-            let input = document.getElementById(code${stop}).value.toLowerCase();
+            let input = document.getElementById(`code${stop}`).value.toLowerCase();
             if (input === correctCode) {
-                document.getElementById(stop${stop}).style.display = 'none';
-                document.getElementById(stop${stop+1}).style.display = 'block';
+                document.getElementById(`stop${stop}`).style.display = 'none';
+                document.getElementById(`stop${stop+1}`).style.display = 'block';
             } else {
                 alert("Incorrect code! Try again.");
             }
